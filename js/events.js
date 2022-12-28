@@ -11,10 +11,14 @@ import {
     fireCard,
     darkTheme,
     lightTheme,
-    main
+    main,
+    treeInputSlider,
+    rainInputSlider,
+    houseInputSlider,
+    fireInputSlider
 } from './variables.js'
 
-export default function( {sound, controls, timer} ) {
+export function Events( {sound, controls, timer} ) {
 
     playButton.addEventListener("click", () => {
         sound.buttonClickSound()
@@ -53,39 +57,47 @@ export default function( {sound, controls, timer} ) {
     })
     
     treeCard.addEventListener("click", () => {
-        treeCard.classList.add('clicked')
-        rainCard.classList.remove('clicked')
-        houseCard.classList.remove('clicked')
-        fireCard.classList.remove('clicked')
-    
+        sound.resetSounds()
         sound.TreeSound()
+
+        treeCard.classList.add("clicked")
+
+        rainInputSlider.value = 0
+        houseInputSlider.value = 0
+        fireInputSlider.value = 0
     })
     
-    rainCard.addEventListener("click", () => {
-        rainCard.classList.add('clicked')
-        treeCard.classList.remove('clicked')
-        houseCard.classList.remove('clicked')
-        fireCard.classList.remove('clicked')
-    
+    rainCard.addEventListener("click", () => { 
+        sound.resetSounds()
         sound.RainSound()
+
+        rainCard.classList.add('clicked')
+
+        treeInputSlider.value = 0
+        houseInputSlider.value = 0
+        fireInputSlider.value = 0
     })
     
     houseCard.addEventListener("click", () => {
-        houseCard.classList.add('clicked')
-        rainCard.classList.remove('clicked')
-        treeCard.classList.remove('clicked')
-        fireCard.classList.remove('clicked')
-    
+        sound.resetSounds()
         sound.HouseSound()
+
+        houseCard.classList.add('clicked')
+
+        treeInputSlider.value = 0
+        rainInputSlider.value = 0
+        fireInputSlider.value = 0
     })
     
     fireCard.addEventListener("click", () => {
-        fireCard.classList.add('clicked')
-        rainCard.classList.remove('clicked')
-        houseCard.classList.remove('clicked')
-        treeCard.classList.remove('clicked')
-    
+        sound.resetSounds()
         sound.FireSound()
+
+        fireCard.classList.add('clicked')
+
+        treeInputSlider.value = 0
+        rainInputSlider.value = 0
+        houseInputSlider.value = 0
     })
 
     darkTheme.addEventListener("click", () => {

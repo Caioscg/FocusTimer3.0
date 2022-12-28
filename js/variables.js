@@ -13,6 +13,10 @@ let secondsDisplay = document.querySelector(".seconds")
 const darkTheme = document.querySelector("#dark")
 const lightTheme = document.querySelector("#light")
 const main = document.querySelector("main")
+const treeInputSlider = document.querySelector(".tree input")
+const rainInputSlider = document.querySelector(".rain input")
+const houseInputSlider = document.querySelector(".house input")
+const fireInputSlider = document.querySelector(".fire input")
 
 export {
     playButton,
@@ -29,5 +33,9 @@ export {
     secondsDisplay,
     darkTheme,
     lightTheme,
-    main
+    main,
+    treeInputSlider,
+    rainInputSlider,
+    houseInputSlider,
+    fireInputSlider
 }

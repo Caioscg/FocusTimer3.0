@@ -9,7 +9,7 @@ import {
     minutesDisplay,
     secondsDisplay
 } from './variables.js'
-import Events from './events.js'
+import { Events } from './events.js'
 
 let controls = Controls( {clockButton, stopButton, playButton, pauseButton} )
 let timer = Timer( {minutesDisplay, secondsDisplay, resetControls: controls.resetControls} )

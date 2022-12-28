@@ -19,14 +19,14 @@ body {
 
 .theme {
     position: absolute;
-    top: 6.4rem;
-    right: 6.4rem;
+    top: clamp(2rem, 1.5rem + 3vw, 6.4rem);
+    right: clamp(2rem, 1.5rem + 3vw, 6.4rem);
     cursor: pointer;
 }
 
 #light {
-    top: 6rem;
-    right: 6rem;
+    top: clamp(1.6rem, 1.1rem + 3vw, 6rem);
+    right: clamp(1.6rem, 1.1rem + 3vw, 6rem);
 }
 
 main {
@@ -86,6 +86,11 @@ button {
     height: clamp(13rem, 11rem + 5vw ,15.2rem);
 
     transition: transform .5s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card:hover {
@@ -102,6 +107,34 @@ button {
 
 .clicked:hover {
     transform: scale(1);
+}
+
+input {
+    margin-top: 3.2rem;
+}
+
+[type="range"] {
+    appearance: none;
+    color: white;
+    width: 70%;
+    height: 4px;
+    border-radius: 5px;
+}
+
+[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    background-color: white;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 100%;
+}
+
+[type="range"]::-moz-range-thumb {
+    appearance: none;
+    background-color: white;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 100%;
 }
 
 .dark .timer .clock span {
